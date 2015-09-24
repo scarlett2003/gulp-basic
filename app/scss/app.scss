@@ -1,15 +1,17 @@
-body {
-	color: red;
-	background-color: yellow;
-	font-size: 18px;
-	h1 {
-		color: red;
-	}
-	p {
-		font-size: 20px;
 
-	}
-	div {
-		display: flex;
-	}
+h1 {
+	color: red;
+}
+p {
+	font-size: 20px;
+
+}
+div {
+	display: flex;
+}
+
+p {
+	color: green;
+	font-size: 60px;
+	display: flex;
 }

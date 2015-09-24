@@ -1,15 +1,20 @@
-body {
-  color: red;
-  background-color: yellow;
-  font-size: 18px;
-}
-body h1 {
+h1 {
   color: red;
 }
-body p {
+
+p {
   font-size: 20px;
 }
-body div {
+
+div {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+p {
+  color: green;
+  font-size: 20px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
