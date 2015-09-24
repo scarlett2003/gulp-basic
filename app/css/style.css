@@ -1,0 +1,16 @@
+body {
+  color: red;
+  background-color: yellow;
+  font-size: 18px;
+}
+body h1 {
+  color: red;
+}
+body p {
+  font-size: 20px;
+}
+body div {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
