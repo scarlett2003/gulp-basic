@@ -1,7 +1,11 @@
 var gulp = require('gulp'),
+	sass = require('gulp-ruby-sass'),
+	autoprefixer = require('gulp-autoprefixer'),
+	minifycess = require('gulp-minify-css'),
 	uglify = require('gulp-uglify'),
-	compass = require('gulp-compass'),
-	rename = require('gulp-rename');
+	// compass = require('gulp-compass'),
+	rename = require('gulp-rename'),
+	notify = require('gulp-notify');
 
 
 
@@ -22,15 +26,17 @@ gulp.task('scripts', function() {
 		.pipe(gulp.dest('app/js'));
 });
 
-// Compass Sass Task
-gulp.task('compass', function(){
-	gulp.src('app/scss/style.scss')
-		.pipe(compass({
-			config_file: './config.rb',
-			css: 'app/css',
-			sass: 'app.scss'
-		}))
-		.pipe(gulp.dest('app/css/'));
+
+
+// gulp-ruby-sass
+gulp.task('styles', function() {
+  return sass('app/scss/style.scss', { style: 'expanded' })
+    .pipe(autoprefixer('last 2 version'))
+    .pipe(gulp.dest('app/css'))
+    .pipe(rename({ suffix: '.min' }))
+    // .pipe(minifycss())
+    // .pipe(gulp.dest('app/css'))
+    .pipe(notify({ message: 'Styles task complete' }));
 });
 
 
