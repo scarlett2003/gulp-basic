@@ -28,7 +28,7 @@ var gulp = require('gulp'),
 
 // gulp-ruby-sass
 gulp.task('styles', function() {
-  return sass('app/scss/style.scss', { style: 'expanded' })
+  return sass('app/sass/style.sass', { style: 'expanded' })
     .pipe(autoprefixer('last 2 version'))
     .pipe(gulp.dest('app/css'))
     .pipe(rename({ suffix: '.min' }))
@@ -79,7 +79,7 @@ gulp.task('default',['scripts', 'styles', 'images']);
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch('app/scss/**/*.scss', ['styles']);
+  gulp.watch('app/sass/**/*.sass', ['styles']);
 
   // Watch .js files
   gulp.watch('app/js/**/*.js', ['scripts']);
